@@ -1,192 +1,167 @@
 # RL Robot Navigation in a 2D Grid-System
 
-A comprehensive PyQt5-based desktop application for visualizing and training a robot using Q-learning in a grid-world environment. Features real-time training visualization, six interactive performance graphs, and advanced analytics.
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![PyQt5](https://img.shields.io/badge/PyQt5-5.15.9-green.svg)
+![License](https://img.shields.io/badge/license-MIT-orange.svg)
 
-https://github.com/user-attachments/assets/4e038303-797a-42c3-8598-3d65f3f3f6ee
+A PyQt5-based desktop application for visualizing and training a robot using Q-learning reinforcement learning algorithm in a grid-world environment.
 
-## Features
+## 📸 Demo
 
-### Core Functionality
-- **Grid-Based Simulation**: 10x10 grid with obstacles, start position, and goal
-- **Real-Time Visualization**: Watch the robot navigate and learn in real-time
-- **Q-Learning Algorithm**: Implements standard Q-learning with epsilon-greedy exploration
-- **Training Controls**: Start, Pause, and Reset buttons for full training control
-- **Path Visualization**: Test the trained policy and visualize the optimal path
+*Main application window showing grid environment and training metrics and real-time training visualization*
 
-### Advanced Analytics (6 Interactive Graphs)
-- **Episode Rewards**: Raw reward per episode showing training progress
-  <img width="1749" height="962" alt="image" src="https://github.com/user-attachments/assets/e8c7a8e0-19e0-40b8-a3c8-47dce840ec1b" />
-
-- **Average Reward Trend**: Smoothed 10-episode moving average for clearer learning trends
-  <img width="1721" height="952" alt="image" src="https://github.com/user-attachments/assets/6b41c013-82af-423e-a132-70c9838a5bce" />
-
-- **Q-Value Statistics**: Min, max, and mean Q-values to monitor algorithm convergence
-  <img width="1713" height="953" alt="image" src="https://github.com/user-attachments/assets/fdbc158a-f739-4ae7-b1bc-cd8ccb218465" />
-
-- **Epsilon Decay**: Exploration rate over time showing exploration-exploitation balance
-  <img width="1748" height="963" alt="image" src="https://github.com/user-attachments/assets/4b13e5e5-c4d6-49ec-9087-117f6e4cc934" />
-
-- **Steps to Goal**: Number of steps taken per episode measuring learning efficiency
-  <img width="1692" height="957" alt="image" src="https://github.com/user-attachments/assets/fff3c07e-d7a2-4d63-a200-84f7882227db" />
-
-- **Success Rate**: Rolling 20-episode success rate percentage
-  <img width="1711" height="953" alt="image" src="https://github.com/user-attachments/assets/2f6ac6d7-08f9-4693-a82a-c6c6793f1220" />
+https://github.com/user-attachments/assets/aaf340c3-5326-4e12-aa42-291f7163e925
 
 
-### Hyperparameter Control
-- **Learning Rate (α)**: Controls how quickly the agent learns (0.01-1.0)
-- **Discount Factor (γ)**: Determines importance of future rewards (0.0-1.0)
-- **Epsilon (ε)**: Controls exploration vs. exploitation (0.0-1.0)
-- **Steps per Update**: Number of steps before updating the display
+## ✨ Features
 
-### Data Management
-- **Save/Load Q-Tables**: Persist learned policies for later use
-- **Export Graphs**: Export all 6 charts as individual PNG files or combined PDF
-- **Timestamped Exports**: Organized file structure with automatic timestamps
+- **Interactive Grid Environment**: 10x10 customizable grid with random obstacles
+- **Real-time Training Visualization**: Watch the agent learn optimal paths dynamically
+- **6 Analytics Charts**: 
+  - Episode Rewards
+  - Average Reward Trend (Smoothed)
+  - Q-Value Statistics (Min/Max/Mean)
+  - Epsilon Decay Over Time
+  - Steps to Goal per Episode
+  - Success Rate Over Time
+- **Adjustable Hyperparameters**: Modify learning rate, discount factor, and epsilon on-the-fly
+- **Model Persistence**: Save and load trained Q-tables
+- **Export Capabilities**: Save all training metrics as PDF or individual PNG files
 
-## Requirements
 
-- Python 3.10+
-- PyQt5
-- NumPy
-- Matplotlib
+## 🚀 Installation
 
-## Installation
+### Prerequisites
+- Python 3.8 or higher
+- pip package manager
 
-1. Install dependencies:
-\`\`\`bash
-pip install PyQt5 numpy matplotlib
-\`\`\`
+### Setup
+1. **Clone the repository:**
+```bash
+git clone https://github.com/pulkitsu/RL-Robot-Navigation-in-a-2D-Grid-System.git
+cd RL-Robot-Navigation-in-a-2D-Grid-System
+```
+2. **Create a virtual environment (recommended):**
+```bash
+# Windows
+python -m venv venv
+venv\Scripts\activate
 
-2. Run the application:
-\`\`\`bash
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+```
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+
+## 💻 Usage
+
+### Basic Usage
+Run the application:
+```bash
 python main.py
-\`\`\`
+```
+### Training the Agent
+1. **Start Training**: Click the "Start Training" button to begin Q-learning
+2. **Monitor Progress**: Watch the grid visualization and real-time charts
+3. **Adjust Parameters**: Modify hyperparameters during training in the right panel
+4. **Pause/Resume**: Use "Pause" button to temporarily stop training
+5. **Visualize Learned Policy**: Click "Visualize Path" to see the optimal route
 
-## Usage
 
-### Starting Training
-1. Click **"Start Training"** to begin the Q-learning process
-2. The robot will explore the grid and learn to reach the goal
-3. Watch all 6 performance graphs update in real-time as the agent learns
+## ⚙️ Configuration
 
-### Monitoring Training Progress
-- **Episode Rewards Tab**: View raw rewards per episode
-- **Average Reward Trend Tab**: See smoothed learning curve (10-episode moving average)
-- **Q-Value Statistics Tab**: Monitor convergence of Q-values (min, max, mean)
-- **Epsilon Decay Tab**: Track exploration rate decrease over time
-- **Steps to Goal Tab**: Measure learning efficiency (fewer steps = better learning)
-- **Success Rate Tab**: View percentage of successful episodes (20-episode rolling average)
+### Hyperparameters
+| Parameter | Symbol | Range | Default | Description |
+|-----------|--------|-------|---------|-------------|
+| **Learning Rate** | α | 0.01 - 1.0 | 0.1 | Controls how much new information overrides old knowledge |
+| **Discount Factor** | γ | 0.0 - 1.0 | 0.95 | Determines importance of future rewards vs immediate rewards |
+| **Epsilon** | ε | 0.0 - 1.0 | 0.1 | Exploration rate (higher = more random exploration) |
+| **Steps per Update** | - | 1 - 100 | 10 | Number of training steps before GUI refresh |
 
-### Adjusting Hyperparameters
-- **Learning Rate**: Controls convergence speed (higher = faster but less stable)
-- **Discount Factor**: Determines long-term planning (higher = plan further ahead)
-- **Epsilon**: Controls exploration (higher = more random exploration)
-- **Steps per Update**: Increase for faster training, decrease for smoother visualization
+### Environment Configuration
+You can modify the environment by changing these parameters in `main.py`:
+```python
+# In RobotNavigationGUI.__init__()
+self.env = GridEnvironment(
+    grid_size=10,          # Size of the grid (10x10)
+    obstacle_density=0.2   # 20% of cells are obstacles
+)
+```
 
-### Visualizing the Learned Path
-1. Train the agent for several episodes
-2. Click **"Visualize Path"** to see the optimal path the agent learned
-3. A message displays the number of steps taken to reach the goal
+### Reward Structure
 
-### Exporting Results
-1. Click **"Export Graphs"** after training
-2. Choose export format:
-   - **PDF**: All 6 charts combined into a single document (ideal for reports)
-   - **PNG**: Individual high-resolution images in a timestamped folder
-3. Select destination folder and export
+- **Reach Goal**: +100
+- **Hit Obstacle/Wall**: -1
+- **Normal Step**: -0.1 (encourages shorter paths)
 
-### Saving and Loading Q-Tables
-- **Save Q-Table**: Export the learned Q-table to a `.npy` file for later use
-- **Load Q-Table**: Import a previously saved Q-table to continue training or test
+## 📚 Documentation
 
-## How It Works
+### How Q-Learning Works
 
-### Environment
-- 10x10 grid with randomly placed obstacles
-- Robot starts at (0, 0) and goal is at (9, 9)
-- Actions: Up, Down, Left, Right
-- Rewards: +100 for reaching goal, -1 for hitting obstacle/boundary, -0.1 per step
+Q-Learning is a model-free reinforcement learning algorithm that learns the value of actions in different states. The agent updates its Q-table using:
 
-### Q-Learning Algorithm
-The agent learns by updating Q-values using:
-\`\`\`
-Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]
-\`\`\`
+```
+Q(s,a) ← Q(s,a) + α[r + γ·max(Q(s',a')) - Q(s,a)]
+```
 
 Where:
-- α = learning rate
-- r = reward
-- γ = discount factor
-- s' = next state
+- `s` = current state
+- `a` = action taken
+- `r` = reward received
+- `s'` = next state
+- `α` = learning rate
+- `γ` = discount factor
 
-### Exploration Strategy
-The agent uses epsilon-greedy exploration:
-- With probability ε: choose a random action (explore)
-- With probability 1-ε: choose the best known action (exploit)
 
-### Performance Metrics
-- **Average Reward**: Smoothed over 10 episodes to show learning trend
-- **Q-Value Statistics**: Indicates convergence (stable values = converged)
-- **Success Rate**: Percentage of episodes reaching the goal
-- **Steps to Goal**: Efficiency metric (lower is better)
+## 📦 Project Structure
 
-## Tips for Training
+```
+RL-Robot-Navigation-in-a-2D-Grid-System/
+├── main.py              # Main application file (all code)
+├── requirements.txt     # Python dependencies
+├── README.md           # This file
+├── screenshots/        # Demo images and GIFs
+│   ├── main_window.png
+│   └── training_demo.gif
+├── saved_models/       # Directory for saved Q-tables
+│   └── .gitkeep
+└── exported_graphs/    # Directory for exported charts
+    └── .gitkeep
+```
 
-1. **Start with default hyperparameters** for stable learning
-2. **Monitor the Average Reward Trend** to see if learning is progressing
-3. **Check Success Rate** to verify the agent is finding the goal
-4. **Increase epsilon** if the agent gets stuck in local patterns
-5. **Decrease learning rate** for more stable convergence
-6. **Increase discount factor** to make the agent plan further ahead
-7. **Export graphs** periodically to track training progress over time
-8. **Save Q-tables** before trying new hyperparameters
+## 🔬 Expected Results
 
-## File Structure
+After training for **500-1000 episodes** with default parameters:
 
-\`\`\`
-.
-├── main.py          # Complete application with all logic
-└── README.md        # Application usage instructions
-\`\`\`
+- **Episode Rewards**: Stabilizes around 95-100
+- **Success Rate**: Reaches 85-95%
+- **Steps to Goal**: Reduces to ~18-20 steps (near-optimal)
+- **Q-Values**: Mean Q-value converges to positive values
 
-## Output Files
+**Optimal Path Length**: 18 steps (for 10x10 grid from top-left to bottom-right)
 
-When exporting graphs, the following files are created:
+---
 
-**PNG Export** (in timestamped folder):
-- `1_episode_rewards.png`
-- `2_average_reward_trend.png`
-- `3_qvalue_statistics.png`
-- `4_epsilon_decay.png`
-- `5_steps_to_goal.png`
-- `6_success_rate.png`
+## 📄 License
 
-**PDF Export**:
-- `q_learning_graphs_TIMESTAMP.pdf` (all 6 charts combined)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Q-Table Export**:
-- `q_table_TIMESTAMP.npy` (NumPy binary format)
+## 🙏 Acknowledgments
 
-## Troubleshooting
+- Q-Learning algorithm based on Watkins & Dayan (1992)
+- Built with PyQt5 for cross-platform GUI
+- Visualization inspired by OpenAI Gym environments
 
-- **Agent not learning**: Try increasing epsilon or decreasing learning rate
-- **Slow training**: Increase "Steps per Update" for faster training
-- **Path not found**: The agent may need more training episodes
-- **Graphs not updating**: Ensure "Steps per Update" is not too high
-- **Export fails**: Check that you have write permissions in the selected folder
+## 📧 Contact
 
-## Advanced Usage
+**Pulkit Sulekh** - https://www.linkedin.com/in/pulkitsulekh
 
-### Analyzing Training Dynamics
-1. Train the agent with different hyperparameters
-2. Export graphs for each configuration
-3. Compare the PDF exports to identify optimal settings
-4. Use the Q-Value Statistics graph to detect convergence issues
+Project Link: https://github.com/pulkitsu/RL-Robot-Navigation-in-a-2D-Grid-System
 
-### Continuing Training
-1. Save your Q-table after initial training
-2. Load the Q-table in a new session
-3. Adjust hyperparameters and continue training
-4. Export graphs to compare before/after improvements
+---
 
+⭐ **Star this repo if you find it helpful!**
