@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![PyQt5](https://img.shields.io/badge/PyQt5-5.15.9-green.svg)
-![License](https://img.shields.io/badge/license-MIT-orange.svg)
+![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)
 
 A PyQt5-based desktop application for visualizing and training a robot using Q-learning reinforcement learning algorithm in a grid-world environment.
 
@@ -148,7 +148,10 @@ After training for **500-1000 episodes** with default parameters:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Copyright © Pulkit Sulekh 2026.
+All rights reserved.
+
+This software is not licensed for distribution, modification, or commercial use without explicit written permission from the author.
 
 ## 🙏 Acknowledgments
 
