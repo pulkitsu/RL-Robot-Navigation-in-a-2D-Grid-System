@@ -12,7 +12,7 @@ A desktop application and benchmark suite for autonomous robot navigation on a d
 
 *Main window: grid environment, real-time training and live telemetry charts.*
 
-https://github.com/user-attachments/assets/135123f1-11c2-4a30-80bb-a8ace868110e
+https://github.com/user-attachments/assets/1f1ed9d5-b564-4bef-98c9-dd212ed4c8b4
 
 ---
 
