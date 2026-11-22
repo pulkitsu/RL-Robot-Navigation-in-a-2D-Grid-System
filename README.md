@@ -2,7 +2,6 @@
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![GUI](https://img.shields.io/badge/GUI-PySide6%20%7C%20PyQt5%20%7C%20PyQt6-green.svg)
-![Course](https://img.shields.io/badge/Course-BT--CSE%20303A%20%2F%20BT--AIDS--356A-orange.svg)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red.svg)
 
 A desktop application and benchmark suite for autonomous robot navigation on a discrete 2D grid. It compares classical search (**BFS** and **A\***) with **tabular Q-learning**, and lets you watch the agent learn in real time.
