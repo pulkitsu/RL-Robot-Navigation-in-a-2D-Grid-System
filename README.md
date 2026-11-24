@@ -8,15 +8,17 @@ A desktop application and benchmark suite for autonomous robot navigation on a d
 
 ---
 
-## 📸 Demo
+##  Demo
 
 *Main window: grid environment, real-time training and live telemetry charts.*
 
-https://github.com/user-attachments/assets/1f1ed9d5-b564-4bef-98c9-dd212ed4c8b4
 
+https://github.com/user-attachments/assets/7f27d45a-caef-4238-96c9-a63969b3584b
+
+<https://github.com/user-attachments/assets/2188e301-4f9e-4068-8c91-36ae4618b64b/>
 ---
 
-## 🏆 Results at a Glance
+##  Results
 
 500-episode run on a 10×10 grid (start `(0, 0)`, goal `(9, 9)`, 20% obstacle density):
 
@@ -33,7 +35,7 @@ Q-learning matches the A\* optimum after training and then acts by table lookup.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Interactive grid environment**: 10×10 grid with 20% random obstacles, fixed start and goal.
 - **BFS solvability check**: every generated map is verified reachable; unsolvable maps are re-rolled automatically.
@@ -48,7 +50,7 @@ Q-learning matches the A\* optimum after training and then acts by table lookup.
 
 ---
 
-## 🎓 Syllabus Alignment
+##  Syllabus Alignment
 
 | Unit | CO | Concepts | Implementation in `main.py` |
 | :--- | :---: | :--- | :--- |
@@ -58,7 +60,7 @@ Q-learning matches the A\* optimum after training and then acts by table lookup.
 
 ---
 
-## 🚀 Installation
+##  Installation
 
 **Requirements:** Python 3.8+ and pip.
 
@@ -86,7 +88,7 @@ With PyQt5 you must also install the charts add-on (`pip install numpy matplotli
 
 ---
 
-## 💻 Usage
+##  Usage
 
 ### Mode 1: Desktop GUI
 
@@ -112,7 +114,7 @@ Prints the full comparison table, useful for collecting report data.
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Hyperparameters
 
@@ -148,7 +150,7 @@ With an 18-step optimal path, the best achievable return is 100 − 18 × 0.1 = 
 
 ---
 
-## 📚 Algorithms
+##  Algorithms
 
 **BFS (solvability check).** A FIFO queue explores the grid level by level; if the goal is never dequeued, the map is rejected and regenerated.
 
@@ -173,7 +175,7 @@ Training uses ε-greedy action selection with exponential decay (ε ≈ 0.082 af
 
 ---
 
-## 🛡️ Safety and Limitations
+##  Safety and Limitations
 
 - **Pre-flight BFS check** guarantees a solution exists before an agent is deployed.
 - **ε = 0 at deployment** removes random exploratory moves from live operation.
@@ -182,7 +184,7 @@ Training uses ε-greedy action selection with exponential decay (ε ≈ 0.082 af
 
 ---
 
-## 📦 Project Structure
+##  Project Structure
 
 ```
 RL-Robot-Navigation-in-a-2D-Grid-System/
@@ -207,20 +209,11 @@ RL-Robot-Navigation-in-a-2D-Grid-System/
 
 ---
 
-## 📄 License
+##  License
 
 Copyright © Pulkitsu 2026. All rights reserved.
 
 Developed for academic evaluation. Not licensed for distribution, modification or commercial use without written permission from the author.
-
----
-
-## 🙏 Acknowledgments
-
-- Q-learning: Watkins & Dayan (1992).
-- A\* search: Hart, Nilsson & Raphael (1968).
-- Environment design inspired by the GridWorld examples in Sutton & Barto, *Reinforcement Learning: An Introduction*.
-- GUI built with PySide6 / PyQt.
 
 ---
 
